@@ -9,7 +9,7 @@
     "start": "parcel",
     "dev": "parcel watch",
     "copy-assets": "cp -r src/assets/* dist",
-    "build": " parcel build && cp -r src/assets/* dist "
+    "build": "parcel build"
   },
   "dependencies": {
     "classnames": "^2.3.2",
