@@ -1,30 +1,15 @@
-import { useState, useEffect } from "react";
+import { useSearchBooksQuery } from "../store/books-api";
 import Book from "./book";
 import Fade from "./fade";
 
 export default function Books({ q, onSelectBook }) {
-  const [books, setBooks] = useState({});
-  const url = "https://www.googleapis.com/books/v1/volumes";
-
-  // TODO: use redux-toolkit
-  useEffect(() => {
-    fetch(
-      `${url}?${new URLSearchParams({
-        orderBy: "relevance",
-        printType: "BOOKS",
-        q: q.trim() == "" ? "Travel & Food" : q,
-        maxResults: 40,
-      })}`
-    )
-      .then((it) => it.json())
-      .then(setBooks);
-  }, [q]);
+  const { data, isLoading, error } = useSearchBooksQuery(q);
 
   return (
     <>
       <Fade style="header" gradient="py-6 from-white to-transparent" />
       <div className="flex flex-wrap gap-3 justify-evenly px-3">
-        {books?.items
+        {data?.items
           ?.filter((it) => it?.volumeInfo?.imageLinks?.smallThumbnail)
           ?.map((it) => (
             <Book
