@@ -23,12 +23,14 @@ export default function Button({
   size = "default",
   onClick,
   children,
+  disabled = false,
   icon = "",
 }) {
   return (
     <button
       type="button"
       className={classNames(className, Styles[style] || "", Sizes[size] || "")}
+      disabled={disabled}
       onClick={onClick}
     >
       {label}
