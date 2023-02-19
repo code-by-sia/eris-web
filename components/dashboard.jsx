@@ -1,5 +1,6 @@
 import Spacer from "./spacer";
 import { CompactCalendar, Calendar } from "./calendar";
+import { useState } from "react";
 function UserInfo() {
   return (
     <div>
@@ -13,12 +14,13 @@ function UserInfo() {
   );
 }
 export default function Dashbaord() {
+  const [date, setDate] = useState(new Date());
   return (
     <div className="flex flex-1 h-fit mb-12 border bg-neutral-50 rounded-lg overflow-hidden">
       <aside className="flex flex-col w-1/6 min-w-[15em] bg-gray-900 p-6  text-white">
         <UserInfo />
         <Spacer />
-        <CompactCalendar />
+        <CompactCalendar value={date} onChange={setDate} />
       </aside>
       <Calendar />
     </div>

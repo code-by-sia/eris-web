@@ -1,3 +1,5 @@
+import classNames from "classnames";
+import { useMemo } from "react";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "./icons/chevron";
 import Spacer from "./spacer";
@@ -44,25 +46,55 @@ function daysInMonth(date) {
   return prev.getDate();
 }
 
-export function CompactCalendar() {
-  const [date, setDate] = useState(new Date());
+function moveToDay(date, day) {
+  const copy = new Date(date * 1);
+  copy.setDate(day);
+  return copy;
+}
 
-  const days = daysInMonth(date);
-  const exDays = daysInMonth(prevMonth(date));
-  const day = firstDayOfMonth(date).getDay(); // Sunday - Saturday : 0 - 6
+function datesAreOnSameDay(first, second) {
+  return (
+    first.getFullYear() === second.getFullYear() &&
+    first.getMonth() === second.getMonth() &&
+    first.getDate() === second.getDate()
+  );
+}
+
+function range(n) {
+  return Array.from(Array(n).keys());
+}
+
+export function CalendarDay({ value, className = "", onClick }) {
+  return (
+    <span
+      onClick={() => onClick(value)}
+      className={classNames("cursor-pointer", className)}
+    >
+      {value.getDate()}
+    </span>
+  );
+}
+
+export function CompactCalendar({ value, onChange }) {
+  const prev = prevMonth(value);
+  const next = nextMonth(value);
+
+  const days = daysInMonth(value);
+  const exDays = daysInMonth(prev);
+  const day = firstDayOfMonth(value).getDay(); // Sunday - Saturday : 0 - 6
   const daysToAdd = (day + 6) % 7;
 
   return (
     <div>
-      <h1 className="flex items-center">
+      <h1 className="flex items-center py-2">
         <strong>
-          {getMonthName(date)} {getYear(date)}
+          {getMonthName(value)} {getYear(value)}
         </strong>
         <Spacer />
-        <span onClick={() => setDate(prevMonth(date))}>
+        <span onClick={() => onChange(prev)}>
           <ChevronLeft className="h-6 hover:text-gray-200 cursor-pointer" />
         </span>
-        <span onClick={() => setDate(nextMonth(date))}>
+        <span onClick={() => onChange(next)}>
           <ChevronRight className="h-6 hover:text-gray-200 cursor-pointer" />
         </span>
       </h1>
@@ -74,20 +106,40 @@ export function CompactCalendar() {
         <strong>F</strong>
         <strong>S</strong>
         <strong>S</strong>
-        {Array.from(Array(daysToAdd).keys()).map((it) => (
-          <span key={it} className="text-neutral-400">
-            {exDays - (daysToAdd - 1 - it)}
-          </span>
-        ))}
-        {Array.from(Array(days).keys()).map((it) => (
-          <span key={it}>{it + 1}</span>
-        ))}
+        {range(daysToAdd)
+          .map((it) => exDays - (daysToAdd - 1 - it))
+          .map((it) => moveToDay(prev, it))
+          .map((it) => (
+            <CalendarDay
+              key={it}
+              className="text-neutral-400"
+              value={it}
+              onClick={onChange}
+            />
+          ))}
+        {range(days)
+          .map((it) => moveToDay(value, it + 1))
+          .map((it) => (
+            <CalendarDay
+              key={it}
+              className={
+                datesAreOnSameDay(it, value) ? "bg-indigo-600 rounded-lg" : ""
+              }
+              value={it}
+              onClick={onChange}
+            />
+          ))}
 
-        {Array.from(Array(7 - ((days + daysToAdd) % 7)).keys()).map((it) => (
-          <span key={it} className="text-neutral-400">
-            {it + 1}
-          </span>
-        ))}
+        {range(7 - ((days + daysToAdd) % 7))
+          .map((it) => moveToDay(next, it + 1))
+          .map((it) => (
+            <CalendarDay
+              key={it}
+              className="text-neutral-400"
+              value={it}
+              onClick={onChange}
+            />
+          ))}
       </div>
     </div>
   );

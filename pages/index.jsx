@@ -1,6 +1,6 @@
 import Page from "../components/page";
 import PageHeader from "../components/page-header";
-
+import useDebounce from "../hooks/debounce";
 import { useState } from "react";
 import Details from "../components/detail-side";
 import Fade from "../components/fade";
@@ -14,6 +14,7 @@ export default function HomePage() {
 
   const [q, setQuery] = useState("");
   const [dialog, setDialog] = useState("");
+  const searchTerm = useDebounce(q, 200);
 
   return (
     <Page className="flex">
@@ -31,7 +32,7 @@ export default function HomePage() {
           onQueryChange={setQuery}
         />
         <section className="flex flex-col flex-1 overflow-auto  px-12">
-          <PageViewer page={page} q={q} onSelectBook={selectBook} />
+          <PageViewer page={page} q={searchTerm} onSelectBook={selectBook} />
         </section>
         {page === "Books" && <Fade gradient="from-transparent to-white" />}
       </div>

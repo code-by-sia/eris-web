@@ -12,9 +12,9 @@ export default function DetailSide({ volumeInfo, accessInfo, onAction }) {
         <img
           src={volumeInfo?.imageLinks?.thumbnail}
           alt="cover"
-          className="rounded-xl mx-auto w-full object-contain max-h-[15em]"
+          className="rounded-xl mx-auto w-full object-contain max-h-[18em]"
         />
-        <h1 className="flex flex-col text-center h-20 text-md py-2">
+        <h1 className="flex flex-col text-center h-20 text-md py-2 w-64">
           <strong>{volumeInfo?.title}</strong>
           <span className="text-gray-700 text-sm">
             {volumeInfo?.authors?.join()}
