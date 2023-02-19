@@ -7,13 +7,13 @@ const Styles = {
   action:
     "inline-flex border border-transparent rounded-md text-white bg-teal-600 hover:bg-teal-900 items-center disabled:opacity-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 justify-center",
   link: "italic hover:underline",
-  nav: "border-b border-nutral-500 text-sm",
 };
 
 const Sizes = {
   default: "p-3 w-full ",
   small: "p-3 text-sm",
   medium: "p-2 text-md",
+  tiny: "p-1",
 };
 
 export default function Button({
