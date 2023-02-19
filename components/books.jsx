@@ -23,7 +23,7 @@ export default function Books({ q, onSelectBook }) {
   return (
     <>
       <Fade style="header" gradient="py-6 from-white to-transparent" />
-      <div className="flex flex-wrap gap-3 justify-evenly">
+      <div className="flex flex-wrap gap-3 justify-evenly px-3">
         {books?.items
           ?.filter((it) => it?.volumeInfo?.imageLinks?.smallThumbnail)
           ?.map((it) => (

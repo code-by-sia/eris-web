@@ -9,7 +9,7 @@ const placeHodlers = {
 
 export default function PageHeader({ nav, setNav, query, onQueryChange }) {
   return (
-    <header className="flex justify-between py-5 px-12">
+    <header className="flex justify-between py-5 px-3">
       <Navigation value={nav} onChange={setNav} />
       <SearchInput
         placeholder={placeHodlers[nav]}

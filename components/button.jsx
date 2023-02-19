@@ -7,6 +7,7 @@ const Styles = {
   action:
     "inline-flex border border-transparent rounded-md text-white bg-teal-600 hover:bg-teal-900 items-center disabled:opacity-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 justify-center",
   link: "italic hover:underline",
+  icon: "hover:opacity-80",
 };
 
 const Sizes = {

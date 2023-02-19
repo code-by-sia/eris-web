@@ -31,7 +31,7 @@ export default function HomePage() {
           query={q}
           onQueryChange={setQuery}
         />
-        <section className="flex flex-col flex-1 overflow-auto  px-12">
+        <section className="flex flex-col flex-1 overflow-auto">
           <PageViewer page={page} q={searchTerm} onSelectBook={selectBook} />
         </section>
         {page === "Books" && <Fade gradient="from-transparent to-white" />}

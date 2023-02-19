@@ -86,8 +86,8 @@ export function CompactCalendar({ value, onChange }) {
 
   return (
     <div>
-      <h1 className="flex items-center py-2">
-        <strong>
+      <h1 className="flex items-center py-4">
+        <strong className="px-2">
           {getMonthName(value)} {getYear(value)}
         </strong>
         <Spacer />

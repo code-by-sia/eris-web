@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import Button from "./button";
+import LibraryIcon from "./icons/library";
 
 function NavItem({ isActive, label, className = "", onClick }) {
   return (
@@ -21,7 +22,8 @@ const NAV = ["Dashboard", "Books", "Members"];
 
 export default function Navigation({ value = "Dashboard", onChange }) {
   return (
-    <nav className="flex gap-2">
+    <nav className="flex gap-2 items-center">
+      <LibraryIcon />
       {NAV.map((it) => (
         <NavItem
           label={it}
