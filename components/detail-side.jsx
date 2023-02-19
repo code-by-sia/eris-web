@@ -6,7 +6,7 @@ import Fade from "./fade";
 
 export default function DetailSide({ volumeInfo, accessInfo, onAction }) {
   return (
-    <aside className="flex flex-col bg-gray-900 text-white h-screen px-6 pt-3 z-30">
+    <aside className="flex flex-col bg-gray-900 text-white h-screen max-h-screen px-6 pt-3 z-30">
       <Header className="font-bold p-6 text-center">About the book</Header>
       <div className="cursor-pointer  items-center flex flex-col w-full items-center gap-2 rounded-lg mx-auto">
         <img
