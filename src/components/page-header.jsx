@@ -1,3 +1,4 @@
+import { useLocation } from "react-router-dom";
 import Navigation from "./navigation";
 import SearchInput from "./search-input";
 
@@ -7,10 +8,12 @@ const placeHodlers = {
   Dashboard: "Member/Book id or name",
 };
 
-export default function PageHeader({ nav, setNav, query, onQueryChange }) {
+export default function PageHeader({ query, onQueryChange }) {
+  const location = useLocation();
+  const nav = location?.pathname;
   return (
     <header className="flex justify-between py-5 px-3">
-      <Navigation value={nav} onChange={setNav} />
+      <Navigation />
       <SearchInput
         placeholder={placeHodlers[nav]}
         className="w-1/6 min-w-[20em]"

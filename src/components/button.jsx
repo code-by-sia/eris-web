@@ -14,6 +14,7 @@ const Sizes = {
   default: "p-3 w-full ",
   small: "p-3 text-sm",
   medium: "p-2 text-md",
+  action: "px-2 py-1 flex gap-2 items-center",
   tiny: "p-1",
 };
 

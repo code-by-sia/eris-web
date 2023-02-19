@@ -1,40 +1,6 @@
-import classNames from "classnames";
 import { useState } from "react";
-import Rating from "./rating";
+import MemberItem from "./member-item";
 import SearchInput from "./search-input";
-
-function MemberItem({ id, selected, image, name, email, onClick }) {
-  return (
-    <li
-      className={classNames(
-        "flex gap-2 items-center p-3 cursor-pointer",
-        selected ? "bg-blue-600 text-white" : "hover:bg-blue-50"
-      )}
-      onClick={onClick}
-    >
-      <img className="w-8 h-8 rounded-full" src={image} alt={name} />
-      <div className="flex-1 min-w-0">
-        <p
-          className={classNames(
-            "text-sm font-medium truncate dark:text-white",
-            selected ? "text-neutral-100" : "text-gray-900 "
-          )}
-        >
-          {name}
-        </p>
-        <p
-          className={classNames(
-            "text-sm  truncate dark:text-gray-400",
-            selected ? "text-neutral-200" : "text-gray-500"
-          )}
-        >
-          {email}
-        </p>
-      </div>
-      <Rating />
-    </li>
-  );
-}
 
 export default function MemberList({ selected, onChange, members }) {
   const [query, onQueryChange] = useState("");
