@@ -12,7 +12,7 @@ export default function HomePage() {
   const [page, setPage] = useState("Dashboard");
   const [book, selectBook] = useState(null);
 
-  const [q, setQuery] = useState("Italian food");
+  const [q, setQuery] = useState("");
   const [dialog, setDialog] = useState("");
 
   return (

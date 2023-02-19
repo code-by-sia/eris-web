@@ -8,8 +8,8 @@ function NavItem({ isActive, label, className = "", onClick }) {
       size=""
       className={classNames(
         className,
-        "uppercase",
-        isActive ? "font-bold" : ""
+        "font-semibold",
+        isActive ? "text-black" : "text-neutral-600"
       )}
       label={label}
       onClick={onClick}
