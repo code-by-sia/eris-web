@@ -2,7 +2,6 @@ import Header from "../components/header";
 import TextField from "../components/text-field";
 import Button from "../components/button";
 import classNames from "classnames";
-import Link from "next/link";
 
 export default function LoginForm({ className, children }) {
   return (
@@ -22,9 +21,9 @@ export default function LoginForm({ className, children }) {
         <TextField id="username" label="Username" />
         <TextField id="password" label="Password" type="password" />
       </div>
-      <Link href="/">
+      <a href="/">
         <Button label="Sign-in" />
-      </Link>
+      </a>
       <div className="flex justify-between">
         <Button style="link" size="small">
           Anonymous Login

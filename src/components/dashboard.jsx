@@ -12,7 +12,7 @@ function UserInfo() {
           src="/me.jpeg"
           className="w-12 h-12 rounded-full shadow-sm object-cover"
         />
-        <a href="/login">
+        <a href="/#login">
           <Button style="icon" size="tiny" icon={SignOutIcon} />
         </a>
       </div>

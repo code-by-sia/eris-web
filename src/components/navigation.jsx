@@ -23,7 +23,7 @@ const NAV = ["Dashboard", "Books", "Members"];
 export default function Navigation({ value = "Dashboard", onChange }) {
   return (
     <nav className="flex gap-2 items-center">
-      <LibraryIcon />
+      <LibraryIcon className="h-6 mx-3" />
       {NAV.map((it) => (
         <NavItem
           label={it}
