@@ -3,9 +3,9 @@ import Navigation from "./navigation";
 import SearchInput from "./search-input";
 
 const placeHodlers = {
-  Books: "Author, ISBN, or Book name",
-  Members: "Member Id or name",
-  Dashboard: "Member/Book id or name",
+  "/books": "Author, ISBN, or Book name",
+  "/members": "Member Id or name",
+  "/": "Member/Book id or name",
 };
 
 export default function PageHeader({ query, onQueryChange }) {

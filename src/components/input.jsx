@@ -21,6 +21,18 @@ export default function Input({
   onChange,
   ...rest
 }) {
+  if (type === "textarea") {
+    return (
+      <textarea
+        id={id}
+        class={classNames(className, STYLES[style] || "", SIZES[size] || "")}
+        required={required}
+        value={value}
+        onChange={(e) => onChange && onChange(e.target.value)}
+        {...rest}
+      ></textarea>
+    );
+  }
   return (
     <input
       id={id}

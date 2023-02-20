@@ -3,11 +3,29 @@ import Spacer from "./spacer";
 import Button from "./button";
 import Badges from "./badges";
 import Fade from "./fade";
+import { ChevronRight } from "./icons/chevron";
 
-export default function DetailSide({ volumeInfo, accessInfo, onAction }) {
+export default function DetailSide({
+  volumeInfo,
+  accessInfo,
+  onAction,
+  onClose,
+}) {
   return (
     <aside className="flex flex-col bg-gray-900 text-white h-screen max-h-screen px-6 pt-3 z-30">
-      <Header className="font-bold p-6 text-center">About the book</Header>
+      <h1 className="flex font-bold py-6 text-center justify-between items-center ">
+        <strong className="flex-1 font-bold text-xl text-center">
+          About the book
+        </strong>
+        <Button
+          style="icon"
+          size="tiny"
+          className="top-4 right-4 text-white"
+          icon={ChevronRight}
+          onClick={onClose}
+        />
+      </h1>
+
       <div className="cursor-pointer  items-center flex flex-col w-full items-center gap-2 rounded-lg mx-auto">
         <img
           src={volumeInfo?.imageLinks?.thumbnail}

@@ -1,4 +1,3 @@
-import classNames from "classnames";
 import Input from "./input";
 
 const LabelStyles = {
@@ -12,6 +11,7 @@ export default function TextFied({
   required = false,
   onChange,
   className = "",
+  textClassName,
   style = "default",
   size = "default",
 }) {
@@ -22,6 +22,7 @@ export default function TextFied({
       </label>
       <Input
         style={style}
+        className={textClassName}
         size={size}
         id={name}
         type={type}
