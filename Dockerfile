@@ -1,4 +1,4 @@
-FROM node as build
+FROM node 
 WORKDIR /app
 
 COPY package.json ./
@@ -8,13 +8,8 @@ RUN npm ci --silent
 
 COPY . ./
 
-RUN npm run build
 RUN npm run copy-assets
+RUN npm start
 
-
-FROM nginx:latest
-
-COPY --from=build /app/dist /usr/share/nginx/html
-COPY nginx/default.conf /etc/nginx/conf.d/default.conf
-
-EXPOSE 80
+ENTRYPOINT [ "npm", "start" ]
+EXPOSE 1234
