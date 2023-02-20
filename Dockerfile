@@ -8,8 +8,9 @@ RUN npm ci --silent
 
 COPY . ./
 
+RUN mkdir dist
 RUN npm run copy-assets
-RUN npm start
+
 
 ENTRYPOINT [ "npm", "start" ]
 EXPOSE 1234
