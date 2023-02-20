@@ -9,7 +9,8 @@
     "start": "parcel",
     "dev": "parcel watch",
     "copy-assets": "cp -r src/assets/* dist",
-    "build": "parcel build"
+    "clean": "rm -rf dist/*",
+    "build": "parcel build --no-source-maps"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.2",
