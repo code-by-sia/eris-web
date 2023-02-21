@@ -9,11 +9,11 @@ export default function MemberList({ selected, onChange, members }) {
     <div className="my-6 flex flex-col gap-2">
       <SearchInput
         placeholder="Search and pick"
-        className="w-1/6 w-full"
+        className="w-1/6 w-full dark:mb-3"
         value={query}
         onChange={onQueryChange}
       />
-      <ul className=" overflow-hidden divide-y divide-gray-200 dark:divide-gray-700 bg-neutral-100 border rounded">
+      <ul className=" overflow-hidden divide-y divide-gray-200 dark:divide-gray-700 bg-neutral-100 border rounded dark:border-0">
         {members?.map((it) => (
           <MemberItem
             key={it.name}

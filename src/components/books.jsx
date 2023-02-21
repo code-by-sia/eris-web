@@ -17,7 +17,10 @@ export default function Books({ q, onSelectBook, onAction }) {
           onClick={() => onAction("new-book")}
         />
       </div>
-      <Fade style="header" gradient="py-6 from-white to-transparent" />
+      <Fade
+        style="header"
+        gradient="py-6 z-30 from-white dark:from-neutral-800 to-transparent"
+      />
       <div className="flex flex-wrap gap-3 relative justify-evenly px-3">
         {data?.items
           ?.filter((it) => it?.volumeInfo?.imageLinks?.smallThumbnail)

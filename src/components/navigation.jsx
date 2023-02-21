@@ -1,7 +1,6 @@
 import classNames from "classnames";
 import { useLocation } from "react-router-dom";
 import Button from "./button";
-import LibraryIcon from "./icons/library";
 
 function NavItem({ isActive, label, path, className = "", onClick }) {
   return (
@@ -11,8 +10,10 @@ function NavItem({ isActive, label, path, className = "", onClick }) {
         size=""
         className={classNames(
           className,
-          "font-semibold",
-          isActive ? "text-black" : "text-neutral-600"
+          "p-1 px-3 rounded-lg font-bold",
+          isActive
+            ? "text-black text-white border bg-neutral-700 dark:bg-gray-700 dark:text-neutral-100 dark:border-0"
+            : " dark:text-neutral-100 dark:hover:bg-gray-600"
         )}
         label={label}
         onClick={onClick}
@@ -26,13 +27,12 @@ const NAV = { Dashboard: "/", Books: "/books", Members: "/members" };
 export default function Navigation() {
   const location = useLocation();
   return (
-    <nav className="flex gap-2 items-center">
-      <LibraryIcon className="h-6 mx-3" />
+    <nav className="flex gap-2 items-center justify-center">
       {Object.keys(NAV).map((it) => (
         <NavItem
           label={it}
           key={it}
-          isActive={it === location?.pathname}
+          isActive={NAV[it] === location?.pathname}
           path={NAV[it]}
         />
       ))}

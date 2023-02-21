@@ -24,7 +24,7 @@ function UserInfo() {
 export default function Dashbaord() {
   const [date, setDate] = useState(new Date());
   return (
-    <div className="flex flex-1 h-fit border-t bg-neutral-50 overflow-hidden">
+    <div className="flex flex-1 h-fit border-t bg-neutral-50 overflow-hidden dark:border-0">
       <aside className="flex flex-col w-1/6 min-w-[15em]  bg-gradient-to-b from-gray-900 to-gray-800 p-6  text-white">
         <UserInfo />
         <Spacer />

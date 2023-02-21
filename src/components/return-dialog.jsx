@@ -15,14 +15,11 @@ export default function ReturnDialog(props) {
         <Spacer />
 
         <span onClick={() => props.onClose()}>
-          <CrossIcon className="h-6 text-gray-500 hover:text-black cursor-pointer" />
+          <CrossIcon className="h-6 text-gray-500 hover:text-black dark:hover:text-white cursor-pointer" />
         </span>
       </h1>
-      <div className="border overflow-hidden flex-1 flex flex-col mt-6 rounded bg-neutral-100">
-        <a
-          href="#"
-          className="flex p-6 hover:bg-gray-100 dark:hover:bg-gray-700"
-        >
+      <div className="border overflow-hidden flex-1 flex flex-col mt-6 rounded bg-neutral-100 dark:bg-neutral-800 dark:border-0">
+        <a href="#" className="flex p-6">
           <div className="flex-shrink-0">
             <img
               className="rounded-full w-12 h-12"
@@ -57,7 +54,7 @@ export default function ReturnDialog(props) {
             </div>
           </div>
         </a>
-        <div className="bg-neutral-50 flex border-t px-6 py-3 flex-col items-start justify-center mt-3">
+        <div className="bg-neutral-50 dark:bg-neutral-600 flex border-t dark:border-0 px-6 py-3 flex-col items-start justify-center mt-3">
           <label
             for="countries"
             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"

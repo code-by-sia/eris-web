@@ -1,7 +1,7 @@
 import Input from "./input";
 
 const LabelStyles = {
-  default: "block text-sm font-medium text-gray-700 mb-1",
+  default: "block text-sm font-medium text-gray-700 dark:text-neutral-100 mb-1",
 };
 export default function TextFied({
   label,

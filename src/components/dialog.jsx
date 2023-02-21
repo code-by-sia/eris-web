@@ -10,6 +10,7 @@ export default function Dialog({ className = "", isOpen, onClose, children }) {
       <div
         className={classNames(
           "shadow-lg border bg-white rounded-xl p-6",
+          "dark:shadow-none	dark:bg-neutral-900 dark:text-neutral-100 dark:border-0",
           className
         )}
         onClick={(e) => e.stopPropagation()}

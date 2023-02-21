@@ -2,8 +2,8 @@ import classNames from "classnames";
 
 const STYLES = {
   default:
-    "border focus:ring-cyan-500 focus:border-cyan-500 block shadow-sm  border-gray-300 rounded-md",
-  search: "border rounded-full px-6",
+    "border focus:ring-cyan-500 focus:border-cyan-500 block shadow-sm border-gray-300 rounded-md dark:border-0 dark:bg-gray-900",
+  search: "border rounded-full px-6 dark:border-0",
 };
 
 const SIZES = {

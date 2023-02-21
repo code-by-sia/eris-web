@@ -146,5 +146,9 @@ export function CompactCalendar({ value, onChange }) {
 }
 
 export function Calendar() {
-  return <div className="p-3">TODO: Calendar / expecting returns</div>;
+  return (
+    <div className="p-3 dark:bg-neutral-700 w-full dark:text-neutral-300">
+      TODO: Calendar / expecting returns
+    </div>
+  );
 }

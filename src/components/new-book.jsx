@@ -17,14 +17,14 @@ export default function NewBookDialog(props) {
         <Spacer />
 
         <span onClick={() => props.onClose()}>
-          <CrossIcon className="h-6 text-gray-500 hover:text-black cursor-pointer" />
+          <CrossIcon className="h-6 text-gray-500 hover:text-black dark:hover:text-white cursor-pointer" />
         </span>
       </h1>
-      <div className="border overflow-hidden flex-1 flex flex-col mt-6 rounded bg-neutral-100">
-        <span className="bg-yellow-100 p-3 m-3 rounded-lg border">
+      <div className="border overflow-hidden flex-1 flex flex-col mt-6 rounded bg-neutral-100 dark:bg-neutral-700 dark:border-0">
+        <span className="bg-yellow-100 dark:bg-yellow-600 p-3 m-3 rounded-lg border dark:border-0 dark:text-black">
           TODO: Add file uploader
         </span>
-        <div className="bg-neutral-50 gap-2 flex border-t px-6 py-3 flex-col items-start justify-center mt-3">
+        <div className="bg-neutral-50 dark:bg-neutral-700 gap-2 flex border-t px-6 py-3 flex-col items-start justify-center mt-3 dark:border-0">
           <TextField textClassName="p-2" className="w-full" label="Name" />
           <TextField textClassName="p-2" className="w-full" label="Author" />
           <TextField

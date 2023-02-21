@@ -17,7 +17,7 @@ export default function BookPage() {
   const searchTerm = useDebounce(q, 200);
 
   return (
-    <Page className="flex">
+    <Page className="flex dark:bg-neutral-700">
       <ReturnDialog isOpen={dialog === "return"} onClose={setDialog} />
       <LendDialog isOpen={dialog === "lend"} onClose={setDialog} />
       <NewBookDialog isOpen={dialog === "new-book"} onClose={setDialog} />
@@ -31,7 +31,7 @@ export default function BookPage() {
             onAction={setDialog}
           />
         </section>
-        <Fade gradient="from-transparent to-white" />
+        <Fade gradient="from-transparent to-white dark:to-neutral-800" />
       </div>
       {book != null && (
         <Details

@@ -14,7 +14,7 @@ export default function LendDialog(props) {
         <strong>Lending Book</strong>
         <Spacer />
         <span onClick={() => props.onClose()}>
-          <CrossIcon className="h-6 text-gray-500 hover:text-black cursor-pointer" />
+          <CrossIcon className="h-6 text-gray-500 hover:text-black dark:hover:text-white cursor-pointer" />
         </span>
       </h1>
 

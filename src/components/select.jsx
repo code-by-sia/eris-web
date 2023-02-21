@@ -12,9 +12,11 @@ export default function Select({ className, value, onChange, options = [] }) {
       py-1.5
       text-base
       font-normal
-      text-gray-700
+      text-gray-700 dark:text-neutral-100
+      dark:bg-gray-900 
       bg-white bg-clip-padding bg-no-repeat
       border border-solid border-gray-300
+      dark:border-0
       rounded
       transition
       ease-in-out
